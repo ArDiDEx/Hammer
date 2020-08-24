@@ -19,8 +19,6 @@ public class BreakEvent implements Listener {
     @EventHandler
     public void interact(PlayerInteractEvent e){
         if(e.getBlockFace() != null){
-            System.out.println(e.getPlayer().getName());
-            System.out.println(e.getBlockFace());
             face.put(e.getPlayer(), e.getBlockFace());
         }
 
@@ -37,7 +35,6 @@ public class BreakEvent implements Listener {
 
 
             BlockFace bface = face.get(e.getPlayer());
-            System.out.println(bface);
             if(bface == BlockFace.DOWN || bface == BlockFace.UP){
                 Block block;
                 for(int xOff = -1; xOff <= 1; ++xOff){
